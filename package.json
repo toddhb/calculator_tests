@@ -1,0 +1,23 @@
+{
+  "name": "calculator_tests",
+  "version": "1.0.0",
+  "description": "A repository of automated tests for the Google calculator web application, written in Cypress",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "npx cypress open --e2e --browser=chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toddhb/calculator_tests.git"
+  },
+  "author": "Todd Brochu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toddhb/calculator_tests/issues"
+  },
+  "homepage": "https://github.com/toddhb/calculator_tests#readme",
+  "devDependencies": {
+    "cypress": "^13.9.0",
+    "rgb-hex": "^4.1.0"
+  }
+}
