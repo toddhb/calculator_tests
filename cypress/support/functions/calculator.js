@@ -2,6 +2,10 @@ function getInputField() {
     return cy.get('span#cwos')
 }
 
+function getLastResult() {
+    return cy.get('span[jsname=ubtiRe]')
+}
+
 function getNumberKey(text) {
     let locator
     switch(text) {
@@ -49,4 +53,4 @@ function goTo() {
     getInputField()
 }
 
-module.exports = { getInputField, getNumberKey, getOperatorKey, goTo }
+module.exports = { getInputField, getLastResult, getNumberKey, getOperatorKey, goTo }
