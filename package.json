@@ -4,7 +4,7 @@
   "description": "A repository of automated tests for the Google calculator web application, written in Cypress",
   "main": "cypress.config.js",
   "scripts": {
-    "test": "npx cypress open --e2e --browser=chrome"
+    "test": "npx cypress run --browser=chrome --spec=\"cypress/e2e/*.cy.js\""
   },
   "repository": {
     "type": "git",
