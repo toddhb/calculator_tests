@@ -1,9 +1,9 @@
 function getInputField() {
-    return cy.get('span#cwos')
+    return cy.get("span#cwos")
 }
 
 function getLastResult() {
-    return cy.get('span[jsname=ubtiRe]')
+    return cy.get("span[jsname=ubtiRe]")
 }
 
 function getNumberKey(text) {
@@ -43,13 +43,42 @@ function getNumberKey(text) {
     return cy.get(`div[jsname=${locator}]`)
 }
 
-function getOperatorKey(ariaLabel) {
-    return cy.get(`div[aria-label="${ariaLabel}"]`)
+function getOperatorKey(text) {
+    let locator
+    switch(text) {
+        case "AC":
+            locator = "all clear"
+            break
+        case "CE":
+            locator = "clear entry"
+            break
+        case "÷":
+            locator = "divide"
+            break
+        case "×":
+            locator = "multiply"
+            break
+        case "−":
+            locator = "minus"
+            break
+        case "+":
+            locator = "plus"
+            break
+        case "=":
+            locator = "equals"
+            break
+        case ".":
+            locator = "point"
+            break
+        default:
+            break
+    }
+    return cy.get(`div[aria-label="${locator}"]`)
 }
 
 function goTo() {
-    cy.visit('https://www.google.com')
-    cy.get('textarea[title="Search"]').clear().type('calculator{enter}')
+    cy.visit("https://www.google.com")
+    cy.get("textarea[title=Search]").clear().type(`calculator{enter}`)
     getInputField()
 }
 

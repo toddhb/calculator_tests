@@ -14,26 +14,26 @@ describe('happy paths', () => {
     // calculate by button presses: 98.7 + 6 - 5 × 432 ÷ 1.01 = -2033.9138613861385
     calculator.getNumberKey("9").click()
     calculator.getNumberKey("8").click()
-    calculator.getOperatorKey("point").click()
+    calculator.getOperatorKey(".").click()
     calculator.getNumberKey("7").click()
-    calculator.getOperatorKey("plus").click()
+    calculator.getOperatorKey("+").click()
     calculator.getNumberKey("6").click()
-    calculator.getOperatorKey("minus").click()
+    calculator.getOperatorKey("−").click()
     calculator.getNumberKey("5").click()
-    calculator.getOperatorKey("multiply").click()
+    calculator.getOperatorKey("×").click()
     calculator.getNumberKey("4").click()
     calculator.getNumberKey("3").click()
     calculator.getNumberKey("2").click()
-    calculator.getOperatorKey("divide").click()
+    calculator.getOperatorKey("÷").click()
     calculator.getNumberKey("1").click()
-    calculator.getOperatorKey("point").click()
+    calculator.getOperatorKey(".").click()
     calculator.getNumberKey("0").click()
     calculator.getNumberKey("1").click()
 
     // the last result is 0 since this is a fresh calculation
     expect(calculator.getLastResult().should("have.text", "Ans = 0"))
 
-    calculator.getOperatorKey("equals").click()
+    calculator.getOperatorKey("=").click()
 
     expect(calculator.getLastResult().should("have.text", expectedLastResult))
     expect(calculator.getInputField().should("have.text", expectedInputFieldValue))
@@ -47,7 +47,7 @@ describe('happy paths', () => {
     expect(calculator.getInputField().should("have.text", expectedInputFieldValue))
 
     // redo the calculation, but this time finish with the Enter key
-    calculator.getOperatorKey("all clear").click()
+    calculator.getOperatorKey("AC").click()
     calculator.getInputField().type(`98.7+6-5*432/1.01{enter}`)
 
     expect(calculator.getLastResult().should("have.text", expectedLastResult))
@@ -60,7 +60,7 @@ describe('happy paths', () => {
     calculator.getNumberKey("2").click()
     calculator.getNumberKey("3").click()
     calculator.getNumberKey("4").click()
-    calculator.getOperatorKey("clear entry").click()
+    calculator.getOperatorKey("CE").click()
 
     expect(calculator.getLastResult().should("have.text", "Ans = 0"))
     expect(calculator.getInputField().should("have.text", "123"))
