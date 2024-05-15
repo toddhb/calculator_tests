@@ -1,5 +1,5 @@
 function getInputField() {
-    return cy.get("span#cwos")
+    return cy.get("span#cwos", { timeout: 15000 })
 }
 
 function getLastResult() {
